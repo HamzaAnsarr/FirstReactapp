@@ -1,14 +1,30 @@
-import  { Component } from "react";
-import './App.css';
+import { Component } from "react";
 
 class App extends Component{
+
+  constructor(){
+    super()
+
+    this.state = {
+      name : "Hamza"
+    }
+  }
+
   render(){
-    return (
+    return(
       <>
-      <h1>Hey there its my first react app</h1>
-      <h2>DOING SOME changings</h2>
+      <h1>Hi {this.state.name}</h1>
+      <button onClick={()=>{
+        this.setState( ()=>{
+          return{
+            name : "Abuzar"
+          }
+        },()=>{
+          console.log(this.state)
+        } )
+      }} >Change Name</button>
       </>
-    );
+    )
   }
 }
 
